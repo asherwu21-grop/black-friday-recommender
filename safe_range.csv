@@ -1,0 +1,8 @@
+weeks,low,high,prices,single_price,sparse
+22,64.0,89.0,5,False,False
+17,28.0,38.0,4,False,False
+14,52.0,68.0,4,False,False
+12,22.0,28.0,3,False,False
+6,34.0,34.0,1,True,True
+4,18.0,18.0,1,True,True
+4,24.0,26.0,2,False,True
