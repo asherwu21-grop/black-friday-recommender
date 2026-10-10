@@ -9,6 +9,7 @@ t = df.groupby(['product_id', 'product_name']).agg(
         low=('price', 'min'), # Lowest seen price
         high=('price','max'), # Highest seen price
         prices=('price', 'nunique') # Unique Prices
+
     )
 t['single_price'], t['sparse'] = t['prices'].apply(lambda v: v == 1), t['weeks'].apply(lambda n: n < 8)
 
