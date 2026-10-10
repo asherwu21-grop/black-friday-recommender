@@ -14,5 +14,13 @@ t['single_price'], t['sparse'] = t['prices'].apply(lambda v: v == 1), t['weeks']
 
 t = t.reset_index() # Makes product_id and product_name appear, they aren't indexes anymore
 
+# Format the dataframe as a Markdown table, using tabulate
+markdown_table = t.to_markdown(index=False)
+
+# Now write:
 t.to_csv('safe_range.csv', index = False)
 
+with open('RESULTS.md', 'w') as f:
+    f.write("8 was chosen as the cutoff as it is reasonably long to judge a season sales.\n\n")
+    f.write(markdown_table)
+    f.write("\n")
