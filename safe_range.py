@@ -12,5 +12,7 @@ t = df.groupby(['product_id', 'product_name']).agg(
     )
 t['single_price'], t['sparse'] = t['prices'].apply(lambda v: v == 1), t['weeks'].apply(lambda n: n < 8)
 
+t = t.reset_index() # Makes product_id and product_name appear, they aren't indexes anymore
+
 t.to_csv('safe_range.csv', index = False)
-# 
+
